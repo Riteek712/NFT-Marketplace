@@ -1,0 +1,4 @@
+1. npm install -> this will install all the required dependencies to our project.
+2. npx hardhat node
+3. npx hardhat run --network sepolia scripts/deploy.js
+4. npm run -> Will run the frontend of project on localhost:3000
