@@ -27,7 +27,7 @@ const getAddress = async () =>{
 
 const updateButton = ( ) =>{
   const ethereumButton = document.querySelector('.enableEthereumButton')
-  ethereumButton.testContent = "Connected!"
+  ethereumButton.textContent = "Connected!"
   ethereumButton.classList.remove("hover:bg-blue-70")
   ethereumButton.classList.remove("bg-blue-500")
   ethereumButton.classList.add("hover:bg-green-70")

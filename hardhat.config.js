@@ -10,7 +10,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     console.log(account.address);
   }
 });
-
+const PRIVATE_KEY = "6c96d1da0bf690ba8824405e17b2e0b23f1b10f6e75de83be21b5c09c157916b"
 module.exports = {
   defaultNetwork: "sepolia",
   networks: {
@@ -18,8 +18,8 @@ module.exports = {
       chainId: 1337
     },
     sepolia: {
-      url: process.env.REACT_APP_ALCHEMY_URL,
-      accounts: [ process.env.REACT_APP_PRIVATE_KEY ]
+      url:  "https://eth-sepolia.g.alchemy.com/v2/pTuCuemkINLjIARnhNgnpCq88nUSCGfk",
+      accounts:  [`0x${PRIVATE_KEY}`]
     }
   },
   solidity: {
