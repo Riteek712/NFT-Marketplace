@@ -51,7 +51,7 @@ const connectWebsite = async () =>{
 useEffect( () =>{
   let val = window.ethereum.isConnected()
   if(val){
-    console.log('is it becouse of this: ', val)
+    // console.log('is it becouse of this: ', val)
     getAddress()
     toggleConnect(val)
     updateButton()
@@ -60,6 +60,7 @@ useEffect( () =>{
   window.ethereum.on('accountChanged', function(accounts){
     window.location.replace(location.pathname)
   })
+  // getAddress()
 }, [currAddress])
 
     return (
