@@ -41,8 +41,10 @@ export default function SellNFT () {
             const res = await uploadJSONToIPFS(nftJSON)
             if(res.success ==true){
                 console.log("Uploaded JSOn to Pinata: ", res)
+                alert("Image uploaded")
                 return res.pinataURL;
             }
+            
         }catch(e){
             console.log("erroe uploading json metadata: ", e)
 
