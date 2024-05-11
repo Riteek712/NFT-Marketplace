@@ -1,12 +1,8 @@
-import logo from '../logo_3.png';
-import fullLogo from '../full_logo.png';
+
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
+
   Link,
-  useRouteMatch,
-  useParams
 } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
