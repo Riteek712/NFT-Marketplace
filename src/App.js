@@ -1,5 +1,4 @@
 import './App.css';
-import Navbar from './components/Navbar.js';
 import Marketplace from './components/Marketplace';
 import Profile from './components/Profile';
 import SellNFT from './components/SellNFT';
