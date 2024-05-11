@@ -1,5 +1,3 @@
-
-
 export const GetIpfsUrlFromPinata = (pinataUrl) => {
     var IPFSUrl = pinataUrl.split("/");
     const lastIndex = IPFSUrl.length;
