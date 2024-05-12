@@ -87,8 +87,8 @@ function Navbar() {
         </ul>
       </nav>
       <div className='text-white text-bold text-right mr-10 text-sm' onClick={connectWallet}>
-        {connected ? `Connected to ${currAddress.substring(0, 15)}...` : "Not Connected. Please login to view NFTs"}
-      </div>
+  {typeof currAddress === 'string' && currAddress !== "0x" ? `Connected to ${currAddress.substring(0, 15)}...` : "Not Connected. Please login to view NFTs"}
+</div>
     </div>
   );
 }
