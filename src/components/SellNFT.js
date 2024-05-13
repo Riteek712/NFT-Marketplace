@@ -31,6 +31,7 @@ export default function SellNFT () {
 
             const response = await uploadFileToIPFS(file)
             if(response.success ===true){
+                alert("Pinata IPFS recived the data!")
                 console.log("Uploaded image to pinata: ", response.pinataURL)
                 setFileURL(response.pinataURL)
             }
@@ -117,7 +118,7 @@ export default function SellNFT () {
                     <label className="block text-purple-500 text-sm font-bold mb-2" htmlFor="image">Upload Image (&lt;500 KB)</label>
                     <input type={"file"} onChange={OnChangeFile}></input>
                 </div>
-                
+                <p>Wait for the IPFS upload and Image data alert befour listing!!</p>
                 <br></br>
                 <div className="text-red-500 text-center">{message}</div>
                 <button onClick={listNFT} className="font-bold mt-10 w-full bg-purple-500 text-white rounded p-2 shadow-lg" id="list-button">
