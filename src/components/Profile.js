@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import MarketplaceJSON from "../Marketplace.json";
 import NFTTile from "./NFTTile";
