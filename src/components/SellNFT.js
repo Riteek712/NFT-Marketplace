@@ -3,17 +3,32 @@ import { useState } from "react";
 import { uploadFileToIPFS, uploadJSONToIPFS } from "../pinata";
 import Marketplace from '../Marketplace.json';
 import { useLocation } from "react-router";
+import axios from "axios";
 
 export default function SellNFT () {
     const [formParams, updateFormParams] = useState({ name: '', description: '', price: ''});
     const [fileURL, setFileURL] = useState(null);
+    // const [showCompressionAlert, setCompressionAlert] = useState(false)
     const ethers = require("ethers");
     const [message, updateMessage] = useState('');
     const location = useLocation();
-
     async function OnChangeFile(e){
         let file = e.target.files[0]
         try{
+            const formData = new FormData();
+            formData.append('file', file);  // Match the field name with your FastAPI endpoint
+            formData.append('k', 16);  // Example value for k (compression factor)
+
+            const cresponse = await axios.post('http://localhost:8000/compress', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+            const message = `Image Size: ${cresponse.data.original_size}\nCompressed Image Size: ${cresponse.data.compressed_size}\nCompression ratio: ${cresponse.data.compression_ratio}\nNormalized Cross Correlation: ${cresponse.data.ncc}\nPSNR: ${parseFloat(cresponse.data.psnr).toFixed(2)} dB`
+            alert(message)
+            
+            
+
             const response = await uploadFileToIPFS(file)
             if(response.success ===true){
                 console.log("Uploaded image to pinata: ", response.pinataURL)
@@ -102,6 +117,7 @@ export default function SellNFT () {
                     <label className="block text-purple-500 text-sm font-bold mb-2" htmlFor="image">Upload Image (&lt;500 KB)</label>
                     <input type={"file"} onChange={OnChangeFile}></input>
                 </div>
+                
                 <br></br>
                 <div className="text-red-500 text-center">{message}</div>
                 <button onClick={listNFT} className="font-bold mt-10 w-full bg-purple-500 text-white rounded p-2 shadow-lg" id="list-button">
