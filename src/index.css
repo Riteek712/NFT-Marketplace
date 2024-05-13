@@ -7,11 +7,11 @@ body {
   /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;*/
-  font-family: 'Open Sans',sans-serif;
+  font-family: "Open Sans", sans-serif;
   /*font-family: 'M PLUS 1p', sans-serif;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./bg.png');
+  background-image: url("./bg.png");
   background-size: 200% 180%;
   animation-duration: 3s;
   animation-timing-function: linear;
@@ -25,6 +25,38 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* Adjust position of the dropdown box */
+.absolute.left-0 {
+  left: -4rem; /* Adjust this value as needed */
+}
+
+/* Hide scrollbar for the dropdown box */
+.overflow-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for the dropdown box */
+.overflow-hidden {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Adjust position of the dropdown box */
+.absolute.left-0 {
+  left: 0;
+}
+
+/* Add margin between connected button and dropdown box */
+.mt-1 {
+  margin-top: 0.25rem; /* Adjust as needed */
+}
+
+.NFTTile:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
