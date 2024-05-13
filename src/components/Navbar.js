@@ -49,7 +49,7 @@ function Navbar() {
   const connectWallet = async () => {
     try {
       await window.ethereum.request({ method: "eth_requestAccounts" });
-      toggleConnect(true);
+      toggleConnect(!connected);
       updateAddress(await window.ethereum.request({ method: "eth_accounts" }));
     } catch (error) {
       console.error("Error connecting wallet:", error);
@@ -117,7 +117,7 @@ function Navbar() {
                 {showWalletDropdown && connected && (
   <div className="absolute top-full left-0 mt-1 max-w-xs bg-white shadow-lg rounded-lg overflow-hidden">
     <div className="block px-4 py-2 text-sm text-gray-600">Connected to:</div>
-    <div className="block px-4 py-2 text-xs text-gray-600">{currAddress.substring(0, 15)}...</div>
+    <div className="block px-4 py-2 text-xs text-gray-600">{currAddress.toString().substring(0, 15)}...</div>
   </div>
 )}
 
