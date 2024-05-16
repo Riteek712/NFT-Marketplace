@@ -19,13 +19,13 @@ export default function SellNFT () {
             formData.append('file', file);  // Match the field name with your FastAPI endpoint
             formData.append('k', 16);  // Example value for k (compression factor)
 
-            const cresponse = await axios.post('http://localhost:8000/compress', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            });
-            const message = `Image Size: ${cresponse.data.original_size}\nCompressed Image Size: ${cresponse.data.compressed_size}\nCompression ratio: ${cresponse.data.compression_ratio}\nNormalized Cross Correlation: ${cresponse.data.ncc}\nPSNR: ${parseFloat(cresponse.data.psnr).toFixed(2)} dB`
-            alert(message)
+            // const cresponse = await axios.post('http://localhost:8000/compress', formData, {
+            //     headers: {
+            //         'Content-Type': 'multipart/form-data',
+            //     },
+            // });
+            // const message = `Image Size: ${cresponse.data.original_size}\nCompressed Image Size: ${cresponse.data.compressed_size}\nCompression ratio: ${cresponse.data.compression_ratio}\nNormalized Cross Correlation: ${cresponse.data.ncc}\nPSNR: ${parseFloat(cresponse.data.psnr).toFixed(2)} dB`
+            // alert(message)
             
             
 
