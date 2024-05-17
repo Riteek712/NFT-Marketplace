@@ -8,7 +8,6 @@ import axios from "axios";
 export default function SellNFT () {
     const [formParams, updateFormParams] = useState({ name: '', description: '', price: ''});
     const [fileURL, setFileURL] = useState(null);
-    // const [showCompressionAlert, setCompressionAlert] = useState(false)
     const ethers = require("ethers");
     const [message, updateMessage] = useState('');
     const location = useLocation();
